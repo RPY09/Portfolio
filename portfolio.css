@@ -20,6 +20,60 @@ body {
   align-items: center;
   position: relative;
 }
+/* border transtions-------------------------------------------------------------------------------------------------------------------------------------------------- */
+.s1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0%;
+  height: 1px;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.671);
+  transition: 0.5s;
+}
+
+.border:hover .s1 {
+  width: 100%;
+}
+.p2 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 1px;
+  height: 0%;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.671);
+  transition: 0.5s;
+}
+.border:hover .p2 {
+  height: 100%;
+}
+.a3 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 0%;
+  height: 1px;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.671);
+  transition: 0.5s;
+}
+.border:hover .a3 {
+  width: 100%;
+}
+.n4 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 1px;
+  height: 0%;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.671);
+  transition: 0.5s;
+}
+.border:hover .n4 {
+  height: 100%;
+}
 /* header tag---------------------------------------------------------------------------------------------------------------------------------- */
 header {
   position: fixed;
@@ -33,13 +87,17 @@ header {
   border: 1px dotted gray;
   height: 50px;
   z-index: 100;
+  gap: 200px;
 }
 .head {
   position: relative;
   top: 0;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
+  height: 40px;
+  width: 140px;
+  align-items: center;
 }
 .head a {
   position: relative;
@@ -284,6 +342,7 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
+
 .contact1 {
   width: 30%;
 }

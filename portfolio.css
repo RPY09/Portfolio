@@ -15,6 +15,7 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+/* header tag---------------------------------------------------------------------------------------------------------------------------------- */
 header {
   position: fixed;
   top: 0;
@@ -42,6 +43,7 @@ header {
   text-decoration: none;
   color: rgb(207, 207, 207);
 }
+/* Photo div------------------------------------------------------------------------------------------------------------------------------- */
 .photo {
   margin-top: 125px;
   margin-left: 1100px;
@@ -77,6 +79,7 @@ header {
   height: 100%;
   width: 100%;
 }
+/* Name======================= -=====================================================================================================================================*/
 .typing {
   position: absolute;
   top: 300px;
@@ -104,14 +107,15 @@ header {
 }
 
 .name {
-  color: #e19016; /* Customize the name color */
+  color: #e19016;
   font-weight: bold;
 }
 
 .skill {
-  color: #dcbe14; /* Customize the skill color */
+  color: #dcbe14;
   font-style: italic;
 }
+/* Project div-------------------------------------------------------------------------------------------------------------------------------------- -----------------*/
 .procontainer {
   display: flex;
   overflow: hidden;
@@ -120,7 +124,10 @@ header {
   position: relative;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
 }
-
+.procontainer:hover .image {
+  animation-play-state: paused !important;
+}
+/* Projects images div----------------------------------------------------------------------------------------------------------------------------------------------- */
 .image {
   display: flex;
   justify-content: start;
@@ -155,9 +162,15 @@ header {
 .image:hover {
   border-bottom: 1px solid white;
 }
-.procontainer:hover .image {
-  animation-play-state: paused !important;
+@keyframes move {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-170vw);
+  }
 }
+/* Projects images div hover------------------------------------------------------------------------------------------------------------------------------------ */
 #img1 {
   animation-delay: 0s;
   z-index: 2;
@@ -218,20 +231,7 @@ header {
   filter: grayscale(0%);
   transform: scale(1);
 }
-@keyframes move {
-  0% {
-    transform: translateX(120%);
-  }
-  100% {
-    transform: translateX(-170vw);
-  }
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
+/* Contact page--------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .container {
   max-width: 600px;
   margin: 50px auto;

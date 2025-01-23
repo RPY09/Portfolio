@@ -79,9 +79,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-color: #33333330;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(149, 144, 144, 0.167);
   position: fixed; /* Added this line */
   top: 0; /* Added this line */
   width: 100%; /* Added this line to ensure the header spans the full width */
@@ -94,7 +94,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: 30px;
   width: 140px;
   border-radius: 5px;
   overflow: hidden;
@@ -112,7 +112,7 @@ header {
 
 .head:hover {
   transform: scale(1.1);
-  background-color: #444;
+  background-color: #44444431;
 }
 
 .head:hover a {
@@ -457,6 +457,41 @@ header {
   gap: 10px;
   background: linear-gradient(135deg, #f5f7fa34 0%, #c3cfe265 100%);
   box-shadow: 0 4px 8px rgba(254, 206, 206, 0.621);
+}
+.contact1 {
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.36);
+  height: 100%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contact1 p {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact1 .links {
+  display: flex;
+  gap: 20px; /* Adjust gap as needed */
+}
+
+.contact1 a {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact1 a:hover {
+  color: #347cc9; /* Change to your desired hover color */
+  transform: scale(1.2);
 }
 
 .contact1,

@@ -14,7 +14,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   };
 
   // Send data to the server
-  fetch("http://localhost:3000/api/saveUser", {
+  fetch("http://localhost:3001/api/saveUser", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

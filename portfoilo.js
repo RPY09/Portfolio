@@ -53,27 +53,3 @@ const observer = new IntersectionObserver(
 );
 
 elements.forEach((el) => observer.observe(el));
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevent form from refreshing the page
-
-  // Get input values
-  const name = document.getElementById("name").value;
-  const number = document.getElementById("number").value;
-  const email = document.getElementById("email").value;
-
-  // Store user details in an object
-  const userDetails = {
-    name: name,
-    contactNumber: number,
-    email: email,
-  };
-
-  // Log the user details (optional: store in localStorage or display on the page)
-  console.log(userDetails);
-
-  // Example: Store in localStorage
-  localStorage.setItem("userDetails", JSON.stringify(userDetails));
-
-  // Example: Display details on the page (optional)
-  alert(`Thank you, ${name}! Your details are saved.`);
-});

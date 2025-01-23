@@ -1,17 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mysql = require("mysql2");
+const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware to parse JSON data
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); // Add this line to parse URL-encoded data
+app.use(cors());
 
 // MySQL Database Connection
 const db = mysql.createConnection({
   host: "localhost",
-  user: "pranav", // Replace with your MySQL username
+  user: "root", // Replace with your MySQL username
   password: "63379", // Replace with your MySQL password
   database: "contact_form", // Database name
 });
@@ -24,7 +27,6 @@ db.connect((err) => {
   }
   console.log("Connected to MySQL database!");
 });
-
 // API to Save User Details
 app.post("/api/saveUser", (req, res) => {
   const { name, contactNumber, email } = req.body;
@@ -45,4 +47,5 @@ app.post("/api/saveUser", (req, res) => {
 // Start the Server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

@@ -4,12 +4,15 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middleware to parse JSON data
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); // Add this line to parse URL-encoded data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors());
+
+// Configure CORS to allow requests from your local development environment
 
 // MySQL Database Connection
 const db = mysql.createConnection({
@@ -27,18 +30,23 @@ db.connect((err) => {
   }
   console.log("Connected to MySQL database!");
 });
+
 // API to Save User Details
 app.post("/api/saveUser", (req, res) => {
   const { name, contactNumber, email } = req.body;
+
+  // Validate request data
+  if (!name || !contactNumber || !email) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
 
   // Insert query
   const query =
     "INSERT INTO user_details (name, contact_number, email) VALUES (?, ?, ?)";
   db.query(query, [name, contactNumber, email], (err, result) => {
     if (err) {
-      console.error("Error inserting data:", err);
-      res.status(500).send("Error saving user details.");
-      return;
+      console.error("Error inserting data:", err.message);
+      return res.status(500).send("Error saving user details.");
     }
     res.status(200).json({ message: "User details saved successfully!" });
   });
@@ -47,5 +55,4 @@ app.post("/api/saveUser", (req, res) => {
 // Start the Server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-  console.log(`Server is running on port ${PORT}`);
 });

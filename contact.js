@@ -1,19 +1,16 @@
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent default form submission
 
-  // Get input values
   const name = document.getElementById("name").value;
   const number = document.getElementById("number").value;
   const email = document.getElementById("email").value;
 
-  // Create the data object
   const userDetails = {
     name: name,
     contactNumber: number,
     email: email,
   };
 
-  // Send data to the server
   fetch("http://localhost:3001/api/saveUser", {
     method: "POST",
     headers: {

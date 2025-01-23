@@ -35,12 +35,18 @@ function deleteEffect() {
 
 typeEffect();
 
-// Existing Intersection Observer for other elements
-// Existing Intersection Observer for other elements
-// Existing Intersection Observer for other elements
+document.querySelectorAll("header .head a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
 const elements = document.querySelectorAll(
   ".contact1, .contact2, .main, .procontainer,.container"
-); // Add .procontainer to the elements list
+);
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -77,4 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   mainObserver.observe(mainElement);
+});
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading-screen");
+  setTimeout(() => {
+    loadingScreen.classList.add("hidden");
+  }, 2000); // Adjust the timeout duration as needed
 });

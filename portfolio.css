@@ -6,7 +6,75 @@
   --font: "Quicksand", serif;
   --size: 2rem;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
+}
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 1s ease;
+}
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.welcome-message {
+  font-size: 6rem;
+  font-family: "Dancing Script", cursive;
+  background: linear-gradient(90deg, #ffffff, #f8b0b0, #9898f8);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient 3s infinite;
+  margin-bottom: 20px;
+}
+.loading-message {
+  font-size: 4rem;
+  font-family: "Dancing Script", cursive;
+  color: #cecece;
+  display: flex;
+}
+.loading-message span {
+  opacity: 0;
+  animation: fade 1.5s infinite;
+}
+.loading-message span:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.window {
+  width: 100%;
+  background-image: url("1.jpeg");
+  background-repeat: no-repeat;
 }
 .window {
   width: 100%;
@@ -235,7 +303,12 @@ header {
 
 /* About section styling */
 .about {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.651
+  ); /* Semi-transparent background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */

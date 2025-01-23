@@ -88,5 +88,5 @@ window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading-screen");
   setTimeout(() => {
     loadingScreen.classList.add("hidden");
-  }, 2000); // Adjust the timeout duration as needed
+  }, 1000); // Adjust the timeout duration as needed
 });

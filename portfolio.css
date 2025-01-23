@@ -76,86 +76,140 @@ body {
 }
 /* header tag---------------------------------------------------------------------------------------------------------------------------------- */
 header {
-  position: fixed;
-  top: 0;
-  background-color: rgba(128, 128, 128, 0.674);
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  border: 1px dotted gray;
-  height: 50px;
-  z-index: 100;
-  gap: 200px;
+  background-color: #333;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Added this line */
+  top: 0; /* Added this line */
+  width: 100%; /* Added this line to ensure the header spans the full width */
+  z-index: 1000;
 }
+
 .head {
   position: relative;
-  top: 0;
-  /* width: 100%; */
+  margin: 0 15px;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 40px;
   width: 140px;
-  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 .head a {
   position: relative;
-  margin-left: 10px;
   font-size: 1.2rem;
   text-decoration: none;
-  color: rgb(207, 207, 207);
+  color: #fff;
+  z-index: 1;
+  transition: color 0.3s ease;
 }
-/* Photo div------------------------------------------------------------------------------------------------------------------------------- */
-.photo {
-  margin-top: 125px;
-  margin-left: 1100px;
-  display: flex;
-  z-index: 10;
-  justify-content: center;
-  align-items: end;
+
+.head:hover {
+  transform: scale(1.1);
+  background-color: #444;
+}
+
+.head:hover a {
+  color: #f1bdb8;
+}
+
+.head .s1,
+.head .p2,
+.head .a3,
+.head .n4 {
   position: absolute;
-  height: 590px;
-  width: 400px;
-  animation: photo 3s ease;
-  filter: grayscale(50%);
-  /* filter: blur(5px); */
-  transition: 0.3s ease;
-}
-.photo:hover {
-  filter: grayscale(0%);
-  /* filter: blur(0px); */
+  background-color: #f3bbad;
+  transition: all 0.3s ease;
 }
 
-@keyframes photo {
-  0% {
-    scale: 0%;
-    rotate: 90deg;
-  }
-
-  100% {
-    rotate: -360deg;
-    scale: 100%;
-  }
+.head .s1 {
+  height: 2px;
+  width: 0;
+  top: 0;
+  left: 0;
 }
-.photo img {
-  height: 100%;
+
+.head .p2 {
+  height: 0;
+  width: 2px;
+  top: 0;
+  right: 0;
+}
+
+.head .a3 {
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.head .n4 {
+  height: 0;
+  width: 2px;
+  bottom: 0;
+  left: 0;
+}
+
+.head:hover .s1 {
   width: 100%;
 }
-/* Name======================= -=====================================================================================================================================*/
+
+.head:hover .p2 {
+  height: 100%;
+}
+
+.head:hover .a3 {
+  width: 100%;
+}
+
+.head:hover .n4 {
+  height: 100%;
+}
+/* Main section styling */
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Slightly shifted down */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+}
+
+.main.scroll-visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Original position */
+}
+
+/* Left container for typing and about sections */
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 60%;
+}
+
+/* Typing effect styling */
 .typing {
-  position: absolute;
-  top: 300px;
-  font-family: "DM Serif Text", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  /* font-style: normal; */
-  color: rgb(242, 228, 228);
+  font-size: 2rem;
+  font-family: "DM Serif Text";
+  margin-bottom: 20px;
+  position: relative;
+  top: 0;
+  color: #f2e4e4;
   font-size: 4.5rem;
   white-space: nowrap;
-  /* border: 1px solid #dcbe14; */
-  height: 300px;
-  width: 800px;
   overflow: hidden;
   animation: blink 0.6s step-end infinite;
 }
@@ -178,6 +232,69 @@ header {
   color: #dcbe14;
   font-style: italic;
 }
+
+/* About section styling */
+.about {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 100%; /* Limit the width for better readability */
+  margin: 20px 0; /* Center the section */
+  font-family: var(--font); /* Use the defined font */
+  color: #333; /* Text color */
+}
+
+.about p {
+  margin-bottom: 15px; /* Space between paragraphs */
+  line-height: 1.6; /* Improve readability */
+}
+
+.about p:first-child {
+  font-size: 1.2rem; /* Slightly larger font for the introduction */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.about p:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph */
+}
+
+/* Photo section styling */
+.photo {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 590px;
+  width: 400px;
+  animation: photo 3s ease;
+  filter: grayscale(50%);
+  transition: 0.3s ease;
+}
+
+.photo:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes photo {
+  0% {
+    transform: scale(0%);
+    rotate: 90deg;
+  }
+  100% {
+    transform: rotate(-360deg);
+    scale: (100%);
+  }
+}
+
+.photo img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
 /* Project div-------------------------------------------------------------------------------------------------------------------------------------- -----------------*/
 .procontainer {
   display: flex;
@@ -186,10 +303,20 @@ header {
   height: 350px;
   position: relative;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Slightly shifted down */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
 }
+
+.procontainer.scroll-visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Original position */
+}
+
 .procontainer:hover .image {
   animation-play-state: paused !important;
 }
+
 /* Projects images div----------------------------------------------------------------------------------------------------------------------------------------------- */
 .image {
   display: flex;
@@ -203,28 +330,51 @@ header {
   position: absolute;
   border-radius: 10px;
   left: 100%;
+  gap: 10px;
   transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1); /* Subtle shadow for depth */
+  /* background: linear-gradient(135deg, #a4a4a469 0%, #fad0c47e 100%); */
 }
+
+.image:hover {
+  box-shadow: 0 8px 16px rgba(128, 128, 128, 0.2); /* Enhanced shadow on hover */
+}
+
 .image a {
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .image a img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(50%);
+  transform: scale(0.7);
+  will-change: transform, opacity, filter;
 }
+
 .image p {
   font-family: var(--font);
-  font-size: 2rem;
-  color: rgb(253, 213, 213);
+  font-size: 1.5rem;
+  color: #fff;
   z-index: 3;
   opacity: 1;
+  margin-top: 10px;
 }
+
 .image:hover {
   border-bottom: 1px solid white;
 }
+
+.image img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1);
+}
+
 @keyframes move {
   0% {
     transform: translateX(120%);
@@ -233,6 +383,7 @@ header {
     transform: translateX(-170vw);
   }
 }
+
 /* Projects images div hover------------------------------------------------------------------------------------------------------------------------------------ */
 #img1 {
   animation-delay: 0s;
@@ -266,6 +417,7 @@ header {
   animation-delay: 14s;
   z-index: 5;
 }
+
 #img1 img,
 #img2 img,
 #img3 img,
@@ -298,31 +450,33 @@ header {
 .container {
   height: 500px;
   width: 700px;
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   gap: 10px;
+  background: linear-gradient(135deg, #f5f7fa34 0%, #c3cfe265 100%);
+  box-shadow: 0 4px 8px rgba(254, 206, 206, 0.621);
 }
+
 .contact1,
 .contact2 {
   border-radius: 10px;
-  background-color: #ffffff4a;
+  background-color: rgba(255, 255, 255, 0.36);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 @keyframes view {
   0% {
     opacity: 0;
-    scale: 0;
     transform: translateY(50px);
+    scale: 0;
   }
   100% {
     opacity: 1;
@@ -336,7 +490,7 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
-
+.container.scroll-visible,
 .contact1.scroll-visible,
 .contact2.scroll-visible {
   opacity: 1;
@@ -346,6 +500,7 @@ header {
 .contact1 {
   width: 30%;
 }
+
 .contact2 {
   width: 70%;
   display: flex;
@@ -353,10 +508,13 @@ header {
   align-items: center;
   flex-direction: column;
 }
+
 .contact1 p {
   font-family: var(--font);
   font-size: var(--size);
+  color: #333;
 }
+
 .contact2 form {
   display: flex;
   flex-direction: column;
@@ -364,8 +522,9 @@ header {
   height: 100%;
   width: 100%;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
+
 .contact2 form input {
   height: 50px;
   width: 90%;
@@ -374,16 +533,22 @@ header {
   font-family: var(--font);
   background-color: rgba(250, 235, 215, 0.53);
   border: none;
-  transition: o.5s ease;
+  padding: 0 10px;
+  transition: background-color 0.3s ease, border 0.3s ease;
 }
+
 .contact2 form input::placeholder {
-  color: #222222;
+  color: #222;
   font-style: italic;
 }
-.contact2 form input:hover {
+
+.contact2 form input:hover,
+.contact2 form input:focus {
   background-color: rgb(250, 235, 215);
   border: 1px solid black;
+  outline: none;
 }
+
 .contact2 form button {
   font-size: 1.3rem;
   font-family: var(--font);
@@ -391,10 +556,67 @@ header {
   width: 200px;
   height: 50px;
   border-radius: 50px;
-  transition: 0.5s ease;
+  transition: background-color 0.3s ease, border 0.3s ease;
   border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
+
 .contact2 form button:hover {
   background-color: #f7e8e8;
   border: 1px solid black;
+}
+
+.contact2 form button .s1,
+.contact2 form button .p2,
+.contact2 form button .a3,
+.contact2 form button .n4 {
+  position: absolute;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.contact2 form button .s1 {
+  height: 2px;
+  width: 0;
+  top: 0;
+  left: 0;
+}
+
+.contact2 form button .p2 {
+  height: 0;
+  width: 2px;
+  top: 0;
+  right: 0;
+}
+
+.contact2 form button .a3 {
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.contact2 form button .n4 {
+  height: 0;
+  width: 2px;
+  bottom: 0;
+  left: 0;
+}
+
+.contact2 form button:hover .s1 {
+  width: 100%;
+}
+
+.contact2 form button:hover .p2 {
+  height: 100%;
+}
+
+.contact2 form button:hover .a3 {
+  width: 100%;
+}
+
+.contact2 form button:hover .n4 {
+  height: 100%;
 }

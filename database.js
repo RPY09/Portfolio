@@ -9,10 +9,15 @@ const PORT = process.env.PORT || 3001;
 // Middleware to parse JSON data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cors());
 
 // Configure CORS to allow requests from your local development environment
+app.use(
+  cors({
+    origin: "http://localhost:5500", // Replace with the URL of your local development environment
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
 // MySQL Database Connection
 const db = mysql.createConnection({

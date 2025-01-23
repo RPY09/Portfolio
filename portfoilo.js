@@ -35,7 +35,12 @@ function deleteEffect() {
 
 typeEffect();
 
-const elements = document.querySelectorAll(".contact1, .contact2");
+// Existing Intersection Observer for other elements
+// Existing Intersection Observer for other elements
+// Existing Intersection Observer for other elements
+const elements = document.querySelectorAll(
+  ".contact1, .contact2, .main, .procontainer,.container"
+); // Add .procontainer to the elements list
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -53,3 +58,23 @@ const observer = new IntersectionObserver(
 );
 
 elements.forEach((el) => observer.observe(el));
+
+// New Intersection Observer specifically for the .main div
+document.addEventListener("DOMContentLoaded", function () {
+  const mainElement = document.querySelector(".main");
+
+  const mainObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("scroll-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% of the element is visible
+    }
+  );
+
+  mainObserver.observe(mainElement);
+});

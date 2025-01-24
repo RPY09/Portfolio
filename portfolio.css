@@ -848,7 +848,7 @@ footer p {
 .qualified:hover .detail {
   display: block;
   background-color: #000000b1;
-  height: 55%;
+  height: fit-content;
   width: 70%;
   color: wheat;
 }

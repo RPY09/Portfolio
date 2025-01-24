@@ -148,6 +148,23 @@
 }
 
 @media (max-width: 576px) {
+  .main {
+    height: 100vh;
+  }
+  .procontainer {
+    height: 100vh;
+  }
+  .image {
+    width: 100%;
+    animation: move-single 16s infinite linear;
+    left: 150%;
+  }
+  .qual-container {
+    height: 100vh;
+  }
+  .container {
+    height: 100vh;
+  }
   .typing {
     font-size: 1.5rem;
     margin-top: 100px;
@@ -305,6 +322,7 @@
 @media (max-width: 576px) {
   footer {
     padding: 10px 0;
+    width: 100%;
   }
 
   .scroll-to-top {
@@ -335,23 +353,30 @@
     align-items: center;
     transition: transform 1s ease;
   }
+  .qualified p {
+    font-size: 1.5rem;
+  }
 
   @media (max-width: 768px) {
     .qualified p {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
-    .qualified {
-      width: 90%;
-      margin-top: 300px;
-      min-height: 200px;
-      filter: blur(0px);
-      opacity: 0.7;
-      background-size: cover;
-    }
-    qualified {
-      animation: slide 8s infinite;
-    }
-  }
+    .qual-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100x;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 50px;
+      }
+      .qualified {
+        width: 90%;
+        background-size: contain;
+        /* background-repeat: no-repeat; */
+        margin: 0px;
+        min-height: 20%;
+      }
 
   .qualified a i {
     font-size: 20px;
@@ -360,31 +385,29 @@
   .detail {
     display: block;
     background-color: #333333bc;
-    height: 45%;
+    height: fit-content;
     width: 90%;
   }
 }
 
 @media (max-width: 576px) {
   .qual-container {
-    /* margin-top: 200px; */
-    flex-direction: column;
-    height: auto;
-    min-height: 50px;
-    min-width: 50px;
-    align-items: center; /* Center the divs horizontally */
-    /* overflow: hidden; Hide overflow to create sliding effect */
-    position: relative;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100x;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
   }
   .qualified {
-    width: 100%;
-    margin-top: 300px;
-    min-height: 90px;
-    filter: blur(0px);
-    opacity: 0.7;
-    background-size: cover;
+    width: 90%;
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    margin: 0px;
+    min-height: 20%;
+  }
+  #university {
   }
 
   .qualified p {
@@ -398,7 +421,7 @@
   .detail {
     display: block;
     background-color: #333333bc;
-    height: 45%;
+    height: fit-content;
     width: 90%;
   }
 }

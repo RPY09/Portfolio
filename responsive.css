@@ -259,7 +259,7 @@
 @media (max-width: 768px) {
   .container {
     height: 300px;
-    width: 0%;
+    width: 90%;
     padding: 10px;
   }
 
@@ -362,86 +362,113 @@
       font-size: 1rem;
     }
     .qual-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100x;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 50px;
-      }
-      .qualified {
-        width: 90%;
-        background-size: contain;
-        /* background-repeat: no-repeat; */
-        margin: 0px;
-        min-height: 20%;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100x;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 50px;
+    }
+    .qualified {
+      width: 90%;
+      background-size: contain;
+      /* background-repeat: no-repeat; */
+      margin: 0px;
+      min-height: 20%;
+    }
 
-  .qualified a i {
-    font-size: 20px;
+    .qualified a i {
+      font-size: 20px;
+    }
+
+    .detail {
+      display: block;
+      background-color: #333333bc;
+      height: fit-content;
+      width: 90%;
+    }
   }
 
-  .detail {
+  @media (max-width: 576px) {
+    .qual-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100x;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 50px;
+    }
+    .qualified {
+      width: 90%;
+      background-size: contain;
+      /* background-repeat: no-repeat; */
+      margin: 0px;
+      filter: blur(0px);
+      min-height: 20%;
+    }
+    #university {
+    }
+
+    .qualified p {
+      font-size: 1.2rem;
+    }
+
+    .qualified a i {
+      font-size: 18px;
+    }
+
+    .detail {
+      display: block;
+      background-color: #333333bc;
+      height: fit-content;
+      width: 90%;
+    }
+  }
+
+  @keyframes slide {
+    0%,
+    25% {
+      transform: translateX(0);
+    }
+    26%,
+    50% {
+      transform: translateX(-100%);
+    }
+    51%,
+    75% {
+      transform: translateX(-200%);
+    }
+    76%,
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .skills,
+  .certi {
+    height: 40%;
+    width: 50%;
+    top: 50px;
+    left: 25%;
+    background-size: cover;
     display: block;
-    background-color: #333333bc;
-    height: fit-content;
-    width: 90%;
+    animation: none;
   }
 }
 
 @media (max-width: 576px) {
-  .qual-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100x;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 50px;
-  }
-  .qualified {
-    width: 90%;
-    background-size: contain;
-    /* background-repeat: no-repeat; */
-    margin: 0px;
-    filter: blur(0px);
-    min-height: 20%;
-  }
-  #university {
-  }
-
-  .qualified p {
-    font-size: 1.2rem;
-  }
-
-  .qualified a i {
-    font-size: 18px;
-  }
-
-  .detail {
+  .skills,
+  .certi {
+    height: 40%;
+    width: 70%;
+    left: 13%;
+    right: 0;
+    background-size: cover;
     display: block;
-    background-color: #333333bc;
-    height: fit-content;
-    width: 90%;
-  }
-}
 
-@keyframes slide {
-  0%,
-  25% {
-    transform: translateX(0);
-  }
-  26%,
-  50% {
-    transform: translateX(-100%);
-  }
-  51%,
-  75% {
-    transform: translateX(-200%);
-  }
-  76%,
-  100% {
-    transform: translateX(-300%);
+    animation: none;
   }
 }

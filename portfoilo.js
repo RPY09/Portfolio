@@ -45,7 +45,7 @@ document.querySelectorAll("header .head a").forEach((anchor) => {
 });
 
 const elements = document.querySelectorAll(
-  ".contact1, .contact2, .main, .procontainer,.container,.qual-container"
+  ".contact1, .contact2, .main, .procontainer,.container,.qual-container,.ach-container"
 );
 
 const observer = new IntersectionObserver(
@@ -151,4 +151,64 @@ window.addEventListener("scroll", () => {
       link.classList.add("active");
     }
   });
+});
+document.querySelectorAll(".skills").forEach((skill) => {
+  skill.addEventListener("click", () => {
+    const modal = document.getElementById("image-modal");
+    const modalImage = document.getElementById("modal-image");
+    const backgroundImage = getComputedStyle(skill).backgroundImage;
+    const imageUrl = backgroundImage.slice(5, -2); // Extract URL from background-image
+
+    modalImage.src = imageUrl;
+    modal.style.display = "flex";
+
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 4000); // 5 seconds
+  });
+});
+document.querySelectorAll(".certi").forEach((certi) => {
+  certi.addEventListener("click", () => {
+    const modal = document.getElementById("image-modal");
+    const modalImage = document.getElementById("modal-image");
+    const backgroundImage = getComputedStyle(certi).backgroundImage;
+    const imageUrl = backgroundImage.slice(5, -2); // Extract URL from background-image
+
+    modalImage.src = imageUrl;
+    modal.style.display = "flex";
+
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 5000); // 5 seconds
+  });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const skills = document.querySelectorAll(".skills");
+  const certis = document.querySelectorAll(".certi");
+  let skillIndex = 0;
+  let certiIndex = 0;
+
+  function showNextSkill() {
+    skills.forEach((skill, index) => {
+      skill.style.display = index === skillIndex ? "flex" : "none";
+    });
+    skillIndex = (skillIndex + 1) % skills.length;
+  }
+
+  function showNextCerti() {
+    certis.forEach((certi, index) => {
+      certi.style.display = index === certiIndex ? "flex" : "none";
+    });
+    certiIndex = (certiIndex + 1) % certis.length;
+  }
+
+  // Show the first skill and certi initially
+  showNextSkill();
+  showNextCerti();
+
+  // Change skill every 5 seconds
+  setInterval(showNextSkill, 2000);
+
+  // Change certi every 5 seconds
+  setInterval(showNextCerti, 4000);
 });

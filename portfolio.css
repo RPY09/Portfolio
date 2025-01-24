@@ -864,3 +864,176 @@ footer p {
 #university {
   background-image: url(indu.jpg);
 }
+
+.ach-container {
+  display: flex;
+  overflow: hidden;
+
+  width: 100%;
+  height: 500px;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.skills {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 40%;
+  width: 20%;
+  position: center;
+  /* border: 1px solid blue; */
+  overflow: hidden;
+  flex-direction: column;
+  animation: moves 16s infinite linear;
+  position: absolute;
+  border-radius: 10px;
+  right: 100%;
+  gap: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+#skil1 {
+  background-image: url(g.jpg);
+  z-index: 2;
+  animation-delay: 0s;
+}
+#skil2 {
+  background-image: url(o.jpg);
+  z-index: 3;
+  animation-delay: 2s;
+}
+#skil3 {
+  background-image: url(go.jpg);
+  z-index: 4;
+  animation-delay: 4s;
+}
+#skil4 {
+  background-image: url(kho.jpg);
+  z-index: 5;
+  animation-delay: 6s;
+}
+#skil5 {
+  background-image: url(bal.jpg);
+  z-index: 2;
+  animation-delay: 8s;
+}
+#skil6 {
+  background-image: url(bas.jpg);
+  z-index: 3;
+  animation-delay: 10s;
+}
+#skil7 {
+  background-image: url(tri.jpg);
+  z-index: 4;
+  animation-delay: 12s;
+}
+#skil8 {
+  background-image: url(raj.jpg);
+  z-index: 5;
+  animation-delay: 14s;
+}
+@keyframes moves {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(170vw);
+  }
+}
+.ach-container.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skillss:hover .skills {
+  animation-play-state: paused !important;
+}
+.image-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.image-modal img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.certi {
+  margin-top: 250px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 40%;
+  width: 20%;
+  position: center;
+  /* border: 1px solid blue; */
+  overflow: hidden;
+  flex-direction: column;
+  animation: mov 12s infinite linear;
+  position: absolute;
+  border-radius: 10px;
+  left: 120%;
+  gap: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+#cert1 {
+  background-image: url(fre.png);
+  z-index: 2;
+  animation-delay: 0s;
+}
+#cert2 {
+  background-image: url(np.png);
+  z-index: 3;
+  animation-delay: 2s;
+}
+#cert3 {
+  background-image: url(cod.png);
+  z-index: 4;
+  animation-delay: 4s;
+}
+#cert4 {
+  background-image: url(fre.png);
+  z-index: 5;
+  animation-delay: 6s;
+}
+#cert5 {
+  background-image: url(np.png);
+  z-index: 2;
+  animation-delay: 8s;
+}
+#cert6 {
+  background-image: url(cod.png);
+  z-index: 3;
+  animation-delay: 10s;
+}
+@keyframes mov {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(-170vw);
+  }
+}
+.certifi:hover .certi {
+  animation-play-state: paused !important;
+}

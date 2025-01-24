@@ -452,10 +452,39 @@
     height: 40%;
     width: 50%;
     top: 50px;
-    left: 25%;
+    left: 100%;
     background-size: cover;
     display: block;
-    animation: none;
+    animation: movs 16s infinite linear;
+  }
+  @keyframes movs {
+    0% {
+      transform: translateX(100%);
+    }
+    12.5% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    37.5% {
+      transform: translateX(-200%);
+    }
+    50% {
+      transform: translateX(-300%);
+    }
+    62.5% {
+      transform: translateX(-400%);
+    }
+    75% {
+      transform: translateX(-500%);
+    }
+    87.5% {
+      transform: translateX(-600%);
+    }
+    100% {
+      transform: translateX(-700%);
+    }
   }
 }
 
@@ -464,11 +493,40 @@
   .certi {
     height: 40%;
     width: 70%;
-    left: 13%;
+    left: 100%;
     right: 0;
     background-size: cover;
     display: block;
-
-    animation: none;
+    gap: 10px;
+    animation: mos 16s infinite linear;
+  }
+  @keyframes mos {
+    0% {
+      transform: translateX(100%);
+    }
+    12.5% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    37.5% {
+      transform: translateX(-200%);
+    }
+    50% {
+      transform: translateX(-300%);
+    }
+    62.5% {
+      transform: translateX(-400%);
+    }
+    75% {
+      transform: translateX(-500%);
+    }
+    87.5% {
+      transform: translateX(-600%);
+    }
+    100% {
+      transform: translateX(-700%);
+    }
   }
 }

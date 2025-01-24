@@ -182,33 +182,3 @@ document.querySelectorAll(".certi").forEach((certi) => {
     }, 5000); // 5 seconds
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const skills = document.querySelectorAll(".skills");
-  const certis = document.querySelectorAll(".certi");
-  let skillIndex = 0;
-  let certiIndex = 0;
-
-  function showNextSkill() {
-    skills.forEach((skill, index) => {
-      skill.style.display = index === skillIndex ? "flex" : "none";
-    });
-    skillIndex = (skillIndex + 1) % skills.length;
-  }
-
-  function showNextCerti() {
-    certis.forEach((certi, index) => {
-      certi.style.display = index === certiIndex ? "flex" : "none";
-    });
-    certiIndex = (certiIndex + 1) % certis.length;
-  }
-
-  // Show the first skill and certi initially
-  showNextSkill();
-  showNextCerti();
-
-  // Change skill every 5 seconds
-  setInterval(showNextSkill, 2000);
-
-  // Change certi every 5 seconds
-  setInterval(showNextCerti, 4000);
-});

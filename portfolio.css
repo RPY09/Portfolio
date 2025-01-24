@@ -955,6 +955,8 @@ footer p {
 .skillss:hover .skills {
   animation-play-state: paused !important;
 }
+.skillss {
+}
 .image-modal {
   display: none;
   position: fixed;

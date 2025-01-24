@@ -45,7 +45,7 @@ document.querySelectorAll("header .head a").forEach((anchor) => {
 });
 
 const elements = document.querySelectorAll(
-  ".contact1, .contact2, .main, .procontainer,.container"
+  ".contact1, .contact2, .main, .procontainer,.container,.qual-container"
 );
 
 const observer = new IntersectionObserver(
@@ -65,7 +65,6 @@ const observer = new IntersectionObserver(
 
 elements.forEach((el) => observer.observe(el));
 
-// New Intersection Observer specifically for the .main div
 document.addEventListener("DOMContentLoaded", function () {
   const mainElement = document.querySelector(".main");
 
@@ -78,12 +77,35 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     {
-      threshold: 0.1, // Trigger when 10% of the element is visible
+      threshold: 0.1,
     }
   );
 
   mainObserver.observe(mainElement);
 });
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading-screen");
+  if (!sessionStorage.getItem("loadingScreenShown")) {
+    setTimeout(() => {
+      loadingScreen.classList.add("hidden");
+      sessionStorage.setItem("loadingScreenShown", "true");
+    }, 2000);
+  } else {
+    loadingScreen.style.display = "none";
+  }
+});
+
+document.getElementById("qr-code-icon").addEventListener("click", function (e) {
+  e.preventDefault();
+  const overlay = document.getElementById("qr-code-overlay");
+  overlay.classList.remove("hidden");
+  document.body.style.pointerEvents = "none";
+  setTimeout(() => {
+    overlay.classList.add("hidden");
+    document.body.style.pointerEvents = "auto";
+  }, 5000);
+});
+
 window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading-screen");
   if (!sessionStorage.getItem("loadingScreenShown")) {
@@ -105,4 +127,28 @@ document.getElementById("qr-code-icon").addEventListener("click", function (e) {
     overlay.classList.add("hidden");
     document.body.style.pointerEvents = "auto"; // Re-enable interactions
   }, 5000); // 5 seconds
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".head");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.querySelector("a").getAttribute("href").substring(1) === current) {
+      link.classList.add("active");
+    }
+  });
 });

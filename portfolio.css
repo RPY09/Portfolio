@@ -85,7 +85,7 @@ body {
   background-size: cover;
   height: 100dvh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   position: relative;
@@ -179,7 +179,10 @@ header {
   z-index: 1;
   transition: color 0.3s ease;
 }
-
+.head.active a {
+  color: #f1bdb8;
+  text-decoration: underline;
+}
 .head:hover {
   transform: scale(1.1);
   background-color: #44444431;
@@ -241,7 +244,7 @@ header {
 .head:hover .n4 {
   height: 100%;
 }
-/* Main section styling */
+
 .main {
   display: flex;
   flex-direction: row;
@@ -251,17 +254,16 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px); /* Slightly shifted down */
-  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .main.scroll-visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Original position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Left container for typing and about sections */
 .left-container {
   display: flex;
   flex-direction: column;
@@ -321,17 +323,17 @@ header {
 }
 
 .about p {
-  margin-bottom: 15px; /* Space between paragraphs */
-  line-height: 1.6; /* Improve readability */
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .about p:first-child {
-  font-size: 1.2rem; /* Slightly larger font for the introduction */
-  font-weight: bold; /* Bold for emphasis */
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .about p:last-child {
-  margin-bottom: 0; /* Remove margin from the last paragraph */
+  margin-bottom: 0;
 }
 
 /* Photo section styling */
@@ -367,7 +369,7 @@ header {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Project div-------------------------------------------------------------------------------------------------------------------------------------- -----------------*/
@@ -378,20 +380,28 @@ header {
   height: 350px;
   position: relative;
   mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px); /* Slightly shifted down */
-  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .procontainer.scroll-visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Original position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .procontainer:hover .image {
   animation-play-state: paused !important;
 }
-
+.heading {
+  position: relative;
+  top: 2;
+  left: 10;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 3;
+  opacity: 1;
+}
 /* Projects images div----------------------------------------------------------------------------------------------------------------------------------------------- */
 .image {
   display: flex;
@@ -407,12 +417,11 @@ header {
   left: 100%;
   gap: 10px;
   transition: 0.3s ease;
-  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1); /* Subtle shadow for depth */
-  /* background: linear-gradient(135deg, #a4a4a469 0%, #fad0c47e 100%); */
+  box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1);
 }
 
 .image:hover {
-  box-shadow: 0 8px 16px rgba(128, 128, 128, 0.2); /* Enhanced shadow on hover */
+  box-shadow: 0 8px 16px rgba(128, 128, 128, 0.2);
 }
 
 .image a {
@@ -554,7 +563,7 @@ header {
 
 .contact1 .links {
   display: flex;
-  gap: 20px; /* Adjust gap as needed */
+  gap: 20px;
 }
 
 .contact1 a {
@@ -565,7 +574,7 @@ header {
 }
 
 .contact1 a:hover {
-  color: #347cc9; /* Change to your desired hover color */
+  color: #fed5d5;
   transform: scale(1.2);
 }
 
@@ -756,4 +765,102 @@ header {
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
+}
+
+footer {
+  background-color: #333333e2;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+.scroll-to-top {
+  background-color: #00000000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.scroll-to-top:hover {
+  background-color: #ffe2e2;
+}
+.qual-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  /* border: 1px solid red; */
+  width: 100%;
+  gap: 20px;
+}
+.qualified {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  /* border: 1px solid blue; */
+  background-color: #333333e2;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  transform: scale(1); /* Initial scale */
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+}
+.qualified p {
+  margin: 5px 0;
+  color: rgb(231, 231, 231);
+  font-size: 2rem;
+}
+
+.qualified a {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  color: #f7bebe; /* Icon color */
+  text-decoration: none;
+}
+
+.qualified a i {
+  font-size: 24px; /* Adjust icon size as needed */
+}
+.qualified:hover {
+  transform: scale(1.1);
+  filter: blur(0px);
+}
+.detail {
+  display: none; /* Hide the detail div */
+}
+
+.qualified:hover .detail {
+  display: block;
+  background-color: #000000b1;
+  height: 55%;
+  width: 70%;
+  color: wheat;
+}
+.qualified:hover .detail p {
+  color: #fff;
+}
+#school {
+  background-image: url("kvs-logo-with-bg.png");
+}
+#college {
+  background-image: url(sri.jpeg);
+}
+#university {
+  background-image: url(indu.jpg);
 }

@@ -405,6 +405,7 @@
     background-size: contain;
     /* background-repeat: no-repeat; */
     margin: 0px;
+    filter: blur(0px);
     min-height: 20%;
   }
   #university {

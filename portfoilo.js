@@ -86,7 +86,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading-screen");
+  if (!sessionStorage.getItem("loadingScreenShown")) {
+    setTimeout(() => {
+      loadingScreen.classList.add("hidden");
+      sessionStorage.setItem("loadingScreenShown", "true");
+    }, 2000); // Adjust the timeout duration as needed
+  } else {
+    loadingScreen.style.display = "none";
+  }
+});
+
+document.getElementById("qr-code-icon").addEventListener("click", function (e) {
+  e.preventDefault();
+  const overlay = document.getElementById("qr-code-overlay");
+  overlay.classList.remove("hidden");
+  document.body.style.pointerEvents = "none"; // Disable interactions
   setTimeout(() => {
-    loadingScreen.classList.add("hidden");
-  }, 2000); // Adjust the timeout duration as needed
+    overlay.classList.add("hidden");
+    document.body.style.pointerEvents = "auto"; // Re-enable interactions
+  }, 5000); // 5 seconds
 });

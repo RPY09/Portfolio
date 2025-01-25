@@ -54,7 +54,7 @@
 
 @media (max-width: 576px) {
   .window {
-    height: 90vh;
+    height: 96vh;
     justify-content: center;
     padding: 10px;
   }

@@ -67,7 +67,7 @@ const observer = new IntersectionObserver(
 elements.forEach((el) => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", function () {
-  const mainElement = document.querySelector(".main");
+  const mainElement = document.querySelector(".main,.ach-container");
 
   const mainObserver = new IntersectionObserver(
     (entries) => {
@@ -108,6 +108,8 @@ window.addEventListener("load", function () {
     loadingScreen.style.display = "none";
   }
 });
+
+//scroll to top------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });

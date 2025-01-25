@@ -809,6 +809,8 @@ footer p {
   height: 300px;
   width: 100%;
   gap: 20px;
+  /* overflow: hidden; */
+  position: relative;
 }
 .qualified {
   display: flex;

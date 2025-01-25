@@ -686,6 +686,9 @@
   display: flex;
   gap: 15px;
 }
+.but {
+  display: none;
+}
 #p4 {
   display: none;
 }

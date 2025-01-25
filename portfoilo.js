@@ -12,10 +12,9 @@ function typeEffect() {
 
   if (charIndex < currentText.length) {
     charIndex++;
-    setTimeout(typeEffect, 100); // Typing speed
+    setTimeout(typeEffect, 100);
   } else {
-    // Pause before deleting
-    setTimeout(deleteEffect, 1000); // Pause for 1 second
+    setTimeout(deleteEffect, 1000);
   }
 }
 
@@ -25,11 +24,10 @@ function deleteEffect() {
 
   if (charIndex > 0) {
     charIndex--;
-    setTimeout(deleteEffect, 50); // Deleting speed
+    setTimeout(deleteEffect, 50);
   } else {
-    // Switch to the next text
     currentTextIndex = (currentTextIndex + 1) % texts.length;
-    setTimeout(typeEffect, 500); // Pause before typing next text
+    setTimeout(typeEffect, 500);
   }
 }
 
@@ -60,14 +58,16 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.5,
+    threshold: 0.1,
   }
 );
 
 elements.forEach((el) => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", function () {
-  const mainElement = document.querySelector(".main,.ach-container");
+  const mainElement = document.querySelector(
+    ".main,.ach-container,qul-container"
+  );
 
   const mainObserver = new IntersectionObserver(
     (entries) => {
@@ -103,7 +103,7 @@ window.addEventListener("load", function () {
     setTimeout(() => {
       loadingScreen.classList.add("hidden");
       sessionStorage.setItem("loadingScreenShown", "true");
-    }, 2000); // Adjust the timeout duration as needed
+    }, 2000);
   } else {
     loadingScreen.style.display = "none";
   }

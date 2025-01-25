@@ -252,7 +252,7 @@ header {
   justify-content: space-between;
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 20px;
   text-align: left;
   opacity: 0;
   transform: translateY(20px);
@@ -369,7 +369,7 @@ header {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.573);
 }
 
 /* Project div-------------------------------------------------------------------------------------------------------------------------------------- -----------------*/
@@ -777,11 +777,14 @@ footer {
 
 footer p {
   margin: 0;
+  font-family: "DM+Serif", Times, serif;
 }
 
 .scroll-to-top {
   background-color: #00000000;
+  width: 100%;
   color: #fff;
+  font-size: var(--font);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -790,7 +793,7 @@ footer p {
 }
 
 .scroll-to-top:hover {
-  background-color: #ffe2e2;
+  background-color: #b9a1a141;
 }
 .qual-container {
   display: flex;

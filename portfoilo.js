@@ -27,7 +27,7 @@ function deleteEffect() {
     setTimeout(deleteEffect, 50);
   } else {
     currentTextIndex = (currentTextIndex + 1) % texts.length;
-    setTimeout(typeEffect, 500);
+    setTimeout(typeEffect, 500); // Pause before typing next text
   }
 }
 
@@ -58,7 +58,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.1,
+    threshold: 0.5,
   }
 );
 
@@ -103,7 +103,7 @@ window.addEventListener("load", function () {
     setTimeout(() => {
       loadingScreen.classList.add("hidden");
       sessionStorage.setItem("loadingScreenShown", "true");
-    }, 2000);
+    }, 2000); // Adjust the timeout duration as needed
   } else {
     loadingScreen.style.display = "none";
   }
@@ -116,7 +116,7 @@ function scrollToTop() {
 }
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".head");
+// const navLinks = document.querySelectorAll(".head");
 
 window.addEventListener("scroll", () => {
   let current = "";
@@ -165,4 +165,12 @@ document.querySelectorAll(".certi").forEach((certi) => {
       modal.style.display = "none";
     }, 5000); // 5 seconds
   });
+});
+
+// Toggle navigation menu on smaller screens
+const toggleButton = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+toggleButton.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
 });

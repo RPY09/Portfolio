@@ -61,15 +61,26 @@
 }
 @media (max-width: 768px) {
   header {
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding: 10px;
+    height: 2.5%;
   }
 
   .head {
-    /* display: none; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  #home-header {
+    display: block;
+    font-family: "DM Serif Text", serif;
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+    color: #fff;
+  }
+  .head a {
     font-size: 1rem;
   }
-
   .menu-button {
     display: none;
     background-color: #333;
@@ -190,6 +201,9 @@
 @media (max-width: 576px) {
   .main {
     height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
   .procontainer {
     height: 100vh;
@@ -435,7 +449,6 @@
     .qualified {
       width: 90%;
       background-size: contain;
-      /* background-repeat: no-repeat; */
       margin: 0px;
       min-height: 20%;
       filter: blur(0);
@@ -510,17 +523,53 @@
   }
 }
 @media (max-width: 768px) {
-  .skills,
-  .certi {
+  .skills {
     height: 40%;
     width: 50%;
     top: 50px;
     left: 100%;
     background-size: cover;
     display: block;
-    animation: movs 16s infinite linear;
+    animation: movs 15s infinite linear;
+  }
+  .certi {
+    height: 40%;
+    width: 50%;
+    top: 50px;
+    left: 100%;
+    background-size: cover;
+    animation: right 10s infinite linear;
   }
   @keyframes movs {
+    0% {
+      transform: translateX(-350%);
+    }
+    12.5% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(100%);
+    }
+    37.5% {
+      transform: translateX(200%);
+    }
+    50% {
+      transform: translateX(300%);
+    }
+    62.5% {
+      transform: translateX(400%);
+    }
+    75% {
+      transform: translateX(500%);
+    }
+    87.5% {
+      transform: translateX(600%);
+    }
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  @keyframes right {
     0% {
       transform: translateX(100%);
     }
@@ -552,8 +601,7 @@
 }
 
 @media (max-width: 576px) {
-  .skills,
-  .certi {
+  .skills {
     height: 40%;
     width: 70%;
     left: 100%;
@@ -563,7 +611,48 @@
     gap: 10px;
     animation: mos 16s infinite linear;
   }
+  .certi {
+    height: 40%;
+    width: 70%;
+    left: 100%;
+    right: 0;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+
+    gap: 5px;
+    animation: left 10s infinite linear;
+  }
   @keyframes mos {
+    0% {
+      transform: translateX(-250%);
+    }
+    12.5% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(100%);
+    }
+    37.5% {
+      transform: translateX(200%);
+    }
+    50% {
+      transform: translateX(300%);
+    }
+    62.5% {
+      transform: translateX(400%);
+    }
+    75% {
+      transform: translateX(500%);
+    }
+    87.5% {
+      transform: translateX(600%);
+    }
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  @keyframes left {
     0% {
       transform: translateX(100%);
     }

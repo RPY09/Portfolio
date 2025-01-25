@@ -34,7 +34,7 @@ function deleteEffect() {
 }
 
 typeEffect();
-
+//scrolling effect------------------------------------------------------------------------------------------------------------------------------------------------------------
 document.querySelectorAll("header .head a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -44,6 +44,7 @@ document.querySelectorAll("header .head a").forEach((anchor) => {
   });
 });
 
+//scrolling effect------------------------------------------------------------------------------------------------------------------------------------------------------------
 const elements = document.querySelectorAll(
   ".contact1, .contact2, .main, .procontainer,.container,.qual-container,.ach-container"
 );
@@ -83,18 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mainObserver.observe(mainElement);
 });
-window.addEventListener("load", function () {
-  const loadingScreen = document.getElementById("loading-screen");
-  if (!sessionStorage.getItem("loadingScreenShown")) {
-    setTimeout(() => {
-      loadingScreen.classList.add("hidden");
-      sessionStorage.setItem("loadingScreenShown", "true");
-    }, 2000);
-  } else {
-    loadingScreen.style.display = "none";
-  }
-});
 
+//QR code overlay------------------------------------------------------------------------------------------------------------------------------------------------------------
 document.getElementById("qr-code-icon").addEventListener("click", function (e) {
   e.preventDefault();
   const overlay = document.getElementById("qr-code-overlay");
@@ -105,7 +96,7 @@ document.getElementById("qr-code-icon").addEventListener("click", function (e) {
     document.body.style.pointerEvents = "auto";
   }, 5000);
 });
-
+//loading screen------------------------------------------------------------------------------------------------------------------------------------------------------------
 window.addEventListener("load", function () {
   const loadingScreen = document.getElementById("loading-screen");
   if (!sessionStorage.getItem("loadingScreenShown")) {
@@ -116,17 +107,6 @@ window.addEventListener("load", function () {
   } else {
     loadingScreen.style.display = "none";
   }
-});
-
-document.getElementById("qr-code-icon").addEventListener("click", function (e) {
-  e.preventDefault();
-  const overlay = document.getElementById("qr-code-overlay");
-  overlay.classList.remove("hidden");
-  document.body.style.pointerEvents = "none"; // Disable interactions
-  setTimeout(() => {
-    overlay.classList.add("hidden");
-    document.body.style.pointerEvents = "auto"; // Re-enable interactions
-  }, 5000); // 5 seconds
 });
 
 function scrollToTop() {
@@ -167,6 +147,8 @@ document.querySelectorAll(".skills").forEach((skill) => {
     }, 4000); // 5 seconds
   });
 });
+
+//displaying image in modal---------------------------------------------------------------------------------------------------------------------------------------------
 document.querySelectorAll(".certi").forEach((certi) => {
   certi.addEventListener("click", () => {
     const modal = document.getElementById("image-modal");

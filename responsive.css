@@ -54,7 +54,7 @@
 
 @media (max-width: 576px) {
   .window {
-    height: 90vh;
+    height: 96vh;
     justify-content: center;
     padding: 10px;
   }
@@ -685,6 +685,9 @@
 .nav-links {
   display: flex;
   gap: 15px;
+}
+.but {
+  display: none;
 }
 #p4 {
   display: none;

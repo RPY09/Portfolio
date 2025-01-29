@@ -118,22 +118,6 @@ function scrollToTop() {
 const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll(".head");
 
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 60) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.querySelector("a").getAttribute("href").substring(1) === current) {
-      link.classList.add("active");
-    }
-  });
-});
 document.querySelectorAll(".skills").forEach((skill) => {
   skill.addEventListener("click", () => {
     const modal = document.getElementById("image-modal");
@@ -167,10 +151,23 @@ document.querySelectorAll(".certi").forEach((certi) => {
   });
 });
 
-// Toggle navigation menu on smaller screens
 const toggleButton = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
+const icon = toggleButton.querySelector("i"); // Target the icon inside the button
 
 toggleButton.addEventListener("click", () => {
+  // Toggle the visibility of the navigation links
   navLinks.classList.toggle("show");
+
+  // Toggle the "active" class on the button
+  toggleButton.classList.toggle("active");
+
+  // Toggle between the menu icon and the "X" icon
+  if (icon.classList.contains("bi-list-nested")) {
+    icon.classList.remove("bi-list-nested");
+    icon.classList.add("bi-x-lg"); // Replace with your "X" icon class
+  } else {
+    icon.classList.remove("bi-x-lg");
+    icon.classList.add("bi-list-nested"); // Revert to the menu icon
+  }
 });

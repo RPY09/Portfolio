@@ -171,3 +171,13 @@ toggleButton.addEventListener("click", () => {
     icon.classList.add("bi-list-nested"); // Revert to the menu icon
   }
 });
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    alert(`Details successfully submitted. Thank you, ${name}!`);
+  });

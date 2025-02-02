@@ -250,15 +250,16 @@
           </div>
         </div>
         <div class="contact2">
-          <form id="contactForm">
-            <input type="text" id="name" placeholder="Name..." required />
+          <form id="contactForm" action="https://formspree.io/f/mbldykng" method="POST">
+            <input type="text" id="name" placeholder="Name..." name="Name" required />
             <input
               type="tel"
               id="number"
+              name="Contact Number"
               placeholder="Contact Number..."
               required
             />
-            <input type="email" id="email" placeholder="Email..." required />
+            <input type="email" id="email" placeholder="Email..." name="email" required />
             <button type="submit" class="border">
               <span class="s1"></span>
               <span class="p2"></span>
@@ -266,6 +267,7 @@
               <span class="n4"></span>Submit
             </button>
           </form>
+          <div id="form-status"></div> 
         </div>
       </div>
     </div>

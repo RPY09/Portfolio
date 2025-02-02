@@ -181,3 +181,35 @@ document
 
     alert(`Details successfully submitted. Thank you, ${name}!`);
   });
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const formStatus = document.getElementById("form-status");
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          formStatus.innerHTML =
+            '<p style="color: green; font-family="Dancing Script">Thank you! Your message has been sent.</p>';
+          form.reset(); // Clear the form
+        } else {
+          formStatus.innerHTML =
+            '<p style="color: red;">Oops! Something went wrong. Please try again.</p>';
+        }
+      })
+      .catch((error) => {
+        formStatus.innerHTML =
+          '<p style="color: black;">Oops! Something went wrong. Please try again.</p>';
+      });
+  });

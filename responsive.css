@@ -317,9 +317,7 @@
     padding: 10px;
   }
   .heading {
-    font-family: "Quicksand ",
-      serif
-        ";
+    font-family: "Quicksand ","serif";
     font-size:1.5rem;
     text-decoration: underline;
     bottom: 10px;
@@ -703,7 +701,7 @@
   text-decoration: underline;
 }
 
-/* Responsive styles */
+
 .nav-toggle {
   display: none;
   background: none;
@@ -713,7 +711,7 @@
   cursor: pointer;
 }
 
-/* For smaller screens */
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -754,7 +752,7 @@
   }
 }
 
-/* For larger screens */
+
 @media (min-width: 769px) {
   .nav-links {
     display: flex;
@@ -769,34 +767,33 @@
     text-shadow: #fff;
   }
 }
-/* Ensure the icon is properly styled */
+
 .nav-toggle i {
   font-size: 24px;
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition for transform and opacity */
+  transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
-/* Add a class for the "X" icon */
 .bi-x-lg {
   font-size: 24px;
-  transform: rotate(90deg); /* Rotate the icon to create an "X" effect */
-  opacity: 1; /* Ensure the icon is visible */
+  transform: rotate(90deg); 
+  opacity: 1;
 }
 
-/* Hide the menu icon when the "X" icon is active */
+ 
 .bi-list-nested {
-  opacity: 1; /* Ensure the icon is visible */
-  transform: rotate(0deg); /* Initial state */
+  opacity: 1; 
+  transform: rotate(0deg); 
 }
 
-/* Transition effect when toggling */
+
 .nav-toggle.active .bi-list-nested {
-  opacity: 0; /* Fade out the menu icon */
+  opacity: 0; 
   transform: rotate(
     -90deg
-  ); /* Optional: Add a slight rotation for a smoother effect */
+  ); 
 }
 
 .nav-toggle.active .bi-x-lg {
-  opacity: 1; /* Fade in the "X" icon */
-  transform: rotate(0deg); /* Rotate back to the original position */
+  opacity: 1; 
+  transform: rotate(0deg); 
 }

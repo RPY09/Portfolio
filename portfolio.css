@@ -99,9 +99,9 @@ header {
   background-color: #33333330;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(149, 144, 144, 0.167);
-  position: fixed; /* Added this line */
-  top: 0; /* Added this line */
-  width: 100%; /* Added this line to ensure the header spans the full width */
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 1000;
 }
 

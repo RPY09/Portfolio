@@ -105,7 +105,7 @@
   .typing {
     /* margin-top: 150px; */
     font-size: 2.5rem;
-    text-align: center;
+    text-align: start;
   }
 
   .photo {
@@ -137,7 +137,7 @@
   .typing {
     font-size: 2rem;
     margin-top: 50px;
-    /* text-align: center; */
+    text-align: start;
   }
   .about {
     z-index: -2;
@@ -166,7 +166,7 @@
   .typing {
     font-size: 2rem;
     margin-top: 50px;
-    /* text-align: center; */
+    text-align: start;
   }
   .about {
     z-index: -2;
@@ -216,7 +216,7 @@
   .typing {
     font-size: 1.5rem;
     margin-top: 20px;
-    text-align: center;
+    text-align: start;
     position: relative;
   }
   .typing p {
@@ -403,8 +403,8 @@
     /* margin-top: 200px; */
     flex-direction: row;
     height: auto;
-    align-items: center; /* Center the divs horizontally */
-    overflow: hidden; /* Hide overflow to create sliding effect */
+    align-items: center; 
+    overflow: hidden; 
     position: relative;
     align-items: center;
     justify-content: center;

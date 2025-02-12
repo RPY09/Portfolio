@@ -153,22 +153,19 @@ document.querySelectorAll(".certi").forEach((certi) => {
 
 const toggleButton = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
-const icon = toggleButton.querySelector("i"); // Target the icon inside the button
+const icon = toggleButton.querySelector("i");
 
 toggleButton.addEventListener("click", () => {
-  // Toggle the visibility of the navigation links
   navLinks.classList.toggle("show");
 
-  // Toggle the "active" class on the button
   toggleButton.classList.toggle("active");
 
-  // Toggle between the menu icon and the "X" icon
   if (icon.classList.contains("bi-list-nested")) {
     icon.classList.remove("bi-list-nested");
-    icon.classList.add("bi-x-lg"); // Replace with your "X" icon class
+    icon.classList.add("bi-x-lg");
   } else {
     icon.classList.remove("bi-x-lg");
-    icon.classList.add("bi-list-nested"); // Revert to the menu icon
+    icon.classList.add("bi-list-nested");
   }
 });
 
@@ -185,7 +182,7 @@ document
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form);
@@ -202,7 +199,7 @@ document
         if (response.ok) {
           formStatus.innerHTML =
             '<p style="color: green; font-family="Dancing Script">Thank you! Your message has been sent.</p>';
-          form.reset(); // Clear the form
+          form.reset();
         } else {
           formStatus.innerHTML =
             '<p style="color: red;">Oops! Something went wrong. Please try again.</p>';

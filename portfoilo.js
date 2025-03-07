@@ -176,16 +176,14 @@ const navLinks = document.querySelector(".nav-links");
 const icon = toggleButton.querySelector("i"); // Target the icon inside the button
 
 toggleButton.addEventListener("click", () => {
-  // Toggle the visibility of the navigation links
   navLinks.classList.toggle("show");
 
   // Toggle the "active" class on the button
   toggleButton.classList.toggle("active");
 
-  // Toggle between the menu icon and the "X" icon
   if (icon.classList.contains("bi-list-nested")) {
     icon.classList.remove("bi-list-nested");
-    icon.classList.add("bi-x-lg"); // Replace with your "X" icon class
+    icon.classList.add("bi-x-lg");
   } else {
     icon.classList.remove("bi-x-lg");
     icon.classList.add("bi-list-nested"); // Revert to the menu icon

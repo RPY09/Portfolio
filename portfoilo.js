@@ -173,17 +173,17 @@ document.querySelectorAll(".certi").forEach((certi) => {
 
 const toggleButton = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
-<<<<<<< HEAD
+
 const icon = toggleButton.querySelector("i");
-=======
-const icon = toggleButton.querySelector("i"); // Target the icon inside the button
->>>>>>> test
+
+const icon = toggleButton.querySelector("i");
+
 
 toggleButton.addEventListener("click", () => {
-  // Toggle the visibility of the navigation links
+ 
   navLinks.classList.toggle("show");
 
-<<<<<<< HEAD
+
   toggleButton.classList.toggle("active");
 
   if (icon.classList.contains("bi-list-nested")) {
@@ -192,18 +192,17 @@ toggleButton.addEventListener("click", () => {
   } else {
     icon.classList.remove("bi-x-lg");
     icon.classList.add("bi-list-nested");
-=======
-  // Toggle the "active" class on the button
+
   toggleButton.classList.toggle("active");
 
-  // Toggle between the menu icon and the "X" icon
+  
   if (icon.classList.contains("bi-list-nested")) {
     icon.classList.remove("bi-list-nested");
-    icon.classList.add("bi-x-lg"); // Replace with your "X" icon class
+    icon.classList.add("bi-x-lg"); 
   } else {
     icon.classList.remove("bi-x-lg");
-    icon.classList.add("bi-list-nested"); // Revert to the menu icon
->>>>>>> test
+    icon.classList.add("bi-list-nested"); 
+
   }
 });
 

@@ -767,33 +767,3 @@
     text-shadow: #fff;
   }
 }
-
-.nav-toggle i {
-  font-size: 24px;
-  transition: transform 0.3s ease, opacity 0.3s ease; 
-}
-
-.bi-x-lg {
-  font-size: 24px;
-  transform: rotate(90deg); 
-  opacity: 1;
-}
-
- 
-.bi-list-nested {
-  opacity: 1; 
-  transform: rotate(0deg); 
-}
-
-
-.nav-toggle.active .bi-list-nested {
-  opacity: 0; 
-  transform: rotate(
-    -90deg
-  ); 
-}
-
-.nav-toggle.active .bi-x-lg {
-  opacity: 1; 
-  transform: rotate(0deg); 
-}

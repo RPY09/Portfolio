@@ -105,7 +105,7 @@
   .typing {
     /* margin-top: 150px; */
     font-size: 2.5rem;
-    text-align: center;
+    text-align: start;
   }
 
   .photo {
@@ -137,7 +137,7 @@
   .typing {
     font-size: 2rem;
     margin-top: 50px;
-    /* text-align: center; */
+    text-align: start;
   }
   .about {
     z-index: -2;
@@ -166,7 +166,7 @@
   .typing {
     font-size: 2rem;
     margin-top: 50px;
-    /* text-align: center; */
+    text-align: start;
   }
   .about {
     z-index: -2;
@@ -216,7 +216,7 @@
   .typing {
     font-size: 1.5rem;
     margin-top: 20px;
-    text-align: center;
+    text-align: start;
     position: relative;
   }
   .typing p {
@@ -317,9 +317,7 @@
     padding: 10px;
   }
   .heading {
-    font-family: "Quicksand ",
-      serif
-        ";
+    font-family: "Quicksand ","serif";
     font-size:1.5rem;
     text-decoration: underline;
     bottom: 10px;

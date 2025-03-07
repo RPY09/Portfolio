@@ -33,13 +33,33 @@ function deleteEffect() {
 
 typeEffect();
 //scrolling effect------------------------------------------------------------------------------------------------------------------------------------------------------------
-document.querySelectorAll("header .head a").forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Handle navigation links
+  document.querySelectorAll("header .head a").forEach((anchor) => {
+    const href = anchor.getAttribute("href");
+    if (href.startsWith("#")) {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        } else {
+          console.error(`Element not found: ${href}`);
+        }
+      });
+    }
   });
+
+  // Handle resume download link
+  const resumeLink = document.querySelector("#Resume-header a");
+  if (resumeLink) {
+    resumeLink.addEventListener("click", function (e) {
+      // No need to prevent default behavior for download link
+      console.log("Resume download link clicked");
+    });
+  }
 });
 
 //scrolling effect------------------------------------------------------------------------------------------------------------------------------------------------------------

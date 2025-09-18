@@ -110,10 +110,10 @@
 
   .photo {
     /* z-index: 1; */
-    height: 350px;
+    height: 400px;
     width: 200px;
     margin-top: 100px;
-    margin-left: 25px;
+    margin-left: 35px;
   }
   .about {
     width: 500px;
@@ -130,7 +130,7 @@
 
 @media (max-width: 768px) {
   .main {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 20px;
   }
@@ -142,7 +142,7 @@
   .about {
     z-index: -2;
     height: fit-content;
-    width: 500px;
+    width: 350px;
   }
   #p1 {
     font-size: 0.9rem;
@@ -151,9 +151,9 @@
     font-size: 0.7rem;
   }
   .photo {
-    height: 250px;
-    width: 180px;
-    margin-top: 0px;
+    height: 450px;
+    width: 200px;
+    margin-top: 110px;
   }
 
   .left-container {
@@ -163,15 +163,16 @@
   }
 }
 @media (max-width: 576px) {
+  
   .typing {
     font-size: 2rem;
-    margin-top: 50px;
+    /* margin-top: 20px; */
     text-align: start;
   }
   .about {
     z-index: -2;
-    height: fit-content;
-    width: 95%;
+    height: 350px;
+    width: 240px;
   }
   #p1 {
     font-size: 0.9rem;
@@ -181,9 +182,9 @@
     font-weight: lighter;
   }
   .photo {
-    height: 250px;
-    width: 180px;
-    margin-top: 30px;
+    height: 350px;
+    width: 150px;
+    margin-top: 190px;
   }
 
   .left-container {
@@ -195,8 +196,8 @@
 @media (max-width: 576px) {
   .main {
     height: 100vh;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: self-start;
     padding: 10px;
   }
   .procontainer {
@@ -215,7 +216,7 @@
   }
   .typing {
     font-size: 1.5rem;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     text-align: start;
     position: relative;
   }
@@ -226,7 +227,7 @@
 
   .about {
     padding: 10px;
-    height: 250px;
+    
   }
   #p1 {
     font-size: 0.7rem;
@@ -236,13 +237,7 @@
     font-size: 0.6rem;
   }
 
-  .photo {
-    height: 200px;
-    width: 150px;
-    /* margin-top: 1px; */
-    bottom: 30px;
-    filter: grayscale(0);
-  }
+  
 
   .left-container {
     margin-top: 10px;

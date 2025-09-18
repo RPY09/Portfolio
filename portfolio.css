@@ -292,9 +292,9 @@ header {
   align-items: center;
   position: relative;
   height: 590px;
-  width: 400px;
+  width: 300px;
   animation: photo 3s ease;
-  filter: grayscale(50%);
+  filter: grayscale(30%);
   transition: 0.3s ease;
 }
 

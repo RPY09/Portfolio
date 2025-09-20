@@ -154,6 +154,7 @@
     height: 450px;
     width: 200px;
     margin-top: 110px;
+    filter: grayscale(0%);
   }
 
   .left-container {

@@ -113,7 +113,7 @@
     height: 400px;
     width: 200px;
     margin-top: 100px;
-    margin-left: 35px;
+   margin-left: -5px;
   }
   .about {
     width: 500px;
@@ -165,14 +165,15 @@
 @media (max-width: 576px) {
   
   .typing {
-    font-size: 2rem;
+    font-size: 1rem;
     /* margin-top: 20px; */
     text-align: start;
+    margin-left: 4px;
   }
   .about {
     z-index: -2;
-    height: 350px;
-    width: 240px;
+    height: 422px;
+    width: 160px;
   }
   #p1 {
     font-size: 0.9rem;
@@ -184,7 +185,7 @@
   .photo {
     height: 350px;
     width: 150px;
-    margin-top: 190px;
+    margin-top: 167px;
   }
 
   .left-container {
@@ -215,7 +216,7 @@
     height: 100vh;
   }
   .typing {
-    font-size: 1.5rem;
+    font-size: 1rem;
     /* margin-top: 20px; */
     text-align: start;
     position: relative;
@@ -240,9 +241,10 @@
   
 
   .left-container {
-    margin-top: 10px;
+   margin-top: -30px;
     padding: 10px;
     font-size: 1px;
+    position: relative;;
   }
 }
 

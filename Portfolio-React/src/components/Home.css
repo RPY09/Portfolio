@@ -209,8 +209,9 @@
   border-radius: 50%;
   position: absolute;
   inset: 0;
-  z-index: 1;margin-left: 10px;
-    margin-top: 8px;
+  z-index: 1;
+  margin-left: 10px;
+  margin-top: 8px;
 }
 
 .hero__photo-initials {

@@ -1,0 +1,181 @@
+.ach__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.ach__sub-heading {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ach__sub-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(82, 43, 91, 0.3);
+}
+
+/* Skill bars */
+.ach__skills { display: flex; flex-direction: column; gap: 1.3rem; }
+
+.ach__skill-item { animation: fadeSlideUp 0.6s ease both; }
+
+.ach__skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.ach__skill-name { font-size: 0.875rem; font-weight: 600; color: var(--text); letter-spacing: 0.02em; }
+
+.ach__skill-pct { font-family: var(--font-mono); font-size: 0.72rem; color: var(--c4); }
+
+.ach__skill-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(82, 43, 91, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ach__skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c3), var(--c4), var(--c5));
+  border-radius: 10px;
+  transition: width 1.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Tech stack grid */
+.ach__tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+
+.ach__tech-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  cursor: default;
+}
+
+.ach__tech-icon { font-size: 1.5rem; }
+
+.ach__tech-name { font-size: 0.67rem; color: var(--text-muted); letter-spacing: 0.06em; }
+
+/* Certificates / skill images */
+.ach__certs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+/* Grouped Highlights */
+.ach__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.ach__category-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.03em;
+  padding-left: 2px;
+}
+
+/* Image cards for real achievement images */
+.ach__img-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid rgba(82, 43, 91, 0.3);
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--c2);
+}
+
+.ach__img-card:hover {
+  border-color: var(--c4);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.03);
+}
+
+.ach__img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease, mix-blend-mode 0.4s ease, filter 0.4s ease;
+  mix-blend-mode: luminosity;
+  opacity: 0.65;
+  filter: contrast(1.2);
+}
+
+.ach__img-card:hover img { 
+  transform: scale(1.06); 
+  mix-blend-mode: normal;
+  opacity: 1;
+  filter: contrast(1);
+}
+
+.ach__img-label {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(25,0,25,0.9));
+  padding: 20px 10px 8px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-align: center;
+}
+
+/* Text cert cards (fallback) */
+.ach__cert {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  animation: fadeSlideUp 0.6s ease both;
+}
+
+.ach__cert-icon { font-size: 1.6rem; flex-shrink: 0; }
+.ach__cert-body { flex: 1; }
+
+.ach__cert-title {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.ach__cert-meta { font-size: 0.72rem; color: var(--text-muted); }
+.ach__cert-year { color: var(--c4); font-family: var(--font-mono); }
+
+@media (max-width: 900px) {
+  .ach__layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ach__certs { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .ach__certs { grid-template-columns: 1fr; }
+}

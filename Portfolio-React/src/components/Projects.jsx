@@ -6,7 +6,7 @@ export const PROJECTS = [
     title: 'DhanaSethu',
     desc: 'Track expenses, guide budgets, manage dues, and build savings with a calmer finance experience designed for daily confidence.',
     tags: ['React','Node.js','MongoDB'],
-    link: 'https:dhanasethu.vercel.app',
+    link: 'https://dhanasethu.vercel.app/',
     img: '/DhanaSethu.png',
     icon: '🏪',
   },
@@ -15,7 +15,7 @@ export const PROJECTS = [
     title: 'CleanStreet',
     desc: 'A community-driven platform to build cleaner, smarter neighborhoods. Report issues like potholes and garbage in real-time and watch them get resolved.',
     tags: ['React','Node.js','MongoDB'],
-    link: 'https:cleanstreet09.vercel.app',
+    link: 'https://cleanstreet09.vercel.app/',
     img: '/cleanStreet.png',
     icon: '🛒',
   },{
